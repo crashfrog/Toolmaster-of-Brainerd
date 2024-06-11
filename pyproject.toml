@@ -1,0 +1,92 @@
+[project]
+authors = [
+  {name = "Justin Payne", email = "crashfrog@gmail.com"},
+]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License",
+  "Typing :: Typed",
+]
+
+dependencies = [
+  # fill me
+]
+description = "Generate NopSCADLib volumizations from a Kicad project."
+keywords = [
+  # fill me
+]
+license = {file = "LICENSE"}
+maintainers = [
+  {name = "Justin Payne", email = "crashfrog@gmail.com"},
+]
+name = "toolmaster-of-brainerd"
+readme = "README.md"
+requires-python = ">=3.8"
+version = "0.1.0"
+
+[project.urls]
+changelog = "https://github.com/crashfrog/Toolmaster-of-Brainerd.git/blob/master/CHANGELOG.md"
+documentation = "https://github.com/crashfrog/Toolmaster-of-Brainerd.git/blob/master/README.md"
+homepage = "https://github.com/crashfrog/Toolmaster-of-Brainerd.git"
+repository = "https://github.com/crashfrog/Toolmaster-of-Brainerd.git"
+
+[project.scripts]
+toolmaster-of-brainerd = "toolmaster_of_brainerd.cli.entrypoint:main"
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=65",
+  "wheel>=0.38",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = []
+
+[tool.isort]
+multi_line_output = 3
+profile = "black"
+skip = ['.venv', 'venv']
+
+[tool.pytest.ini_options]
+testpaths = [
+  "tests",
+]
+
+[tool.black]
+exclude = '''
+/(
+|.venv
+|venv
+|dist
+|docs
+)/
+'''
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_untyped_defs = true
+follow_imports = "silent"
+ignore_missing_imports = true
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+explicit_package_bases = true
+namespace_packages = true
+
+[[tool.mypy.overrides]]
+ignore_errors = true
+module = "tests.*"
