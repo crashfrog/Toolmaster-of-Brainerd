@@ -19,7 +19,10 @@ classifiers = [
 ]
 
 dependencies = [
-  "click >= 8.0.1",
+  "click >= 8.1.7",
+  "jinja2 >= 3.1.4",
+  "kiutils ~= 1.4.8",
+  'strictyaml ~= 1.7.3',
 ]
 description = "Generate NopSCADLib volumizations from a Kicad project."
 keywords = [
@@ -41,7 +44,7 @@ homepage = "https://github.com/crashfrog/Toolmaster-of-Brainerd.git"
 repository = "https://github.com/crashfrog/Toolmaster-of-Brainerd.git"
 
 [project.scripts]
-toolmaster-of-brainerd = "toolmaster_of_brainerd.cli.entrypoint:main"
+tob = "toolmaster_of_brainerd.cli.entrypoint:cli"
 
 [build-system]
 build-backend = "setuptools.build_meta"
