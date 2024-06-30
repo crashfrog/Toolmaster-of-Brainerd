@@ -19,7 +19,7 @@ classifiers = [
 ]
 
 dependencies = [
-  # fill me
+  "click >= 8.0.1",
 ]
 description = "Generate NopSCADLib volumizations from a Kicad project."
 keywords = [
