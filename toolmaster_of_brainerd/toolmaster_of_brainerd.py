@@ -55,6 +55,7 @@ def polygonize(items):
         i = index[(i.end.X, i.end.Y)]
 
 def main(config, layout_file, o, verbose=0):
+    # Set up the render context
     log = logging.getLogger("toolmaster")
     log.info(f"Starting toolmaster_of_brainerd")
     log.info(f"Reading layout file {layout_file}...")
